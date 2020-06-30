@@ -15,7 +15,7 @@ This is a simple tutorial for individuals interested in learning more about Deep
 
 Import all of your **dependencies**
 
-``` python
+```python
 import tensorflow as tf
 import matplotlib.pyplot as plt
 import numpy as np
@@ -24,14 +24,14 @@ import numpy as np
 <h1>Import Dataset</h1>
 
 Import handwritten images. The MNIST database is a large database of handwritten digits that is commonly used for training various image processing systems.
-``` python
+```python
 #28x28 pixel hand-written digit images in multi-dimensional array
 mnist = tf.keras.datasets.mnist 
 ```
 
 <h1>Split your dataset into training and testing</h1>
 Split your dataset into **training** and **testing** sets.
-``` python
+```python
 #split data into test and train
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 ```
@@ -41,7 +41,7 @@ Furthermore, after a model has been processed by using the training set, you tes
 
 <h1>Normalize your data</h1>
 Next, you **normalize** the data. 
-```
+```python
 #normalize data
 x_train = tf.keras.utils.normalize(x_train, axis = 1)
 x_test = tf.keras.utils.normalize(x_test, axis = 1)
@@ -51,10 +51,11 @@ The goal of normalization is to change the values in your dataset so they have a
 
 <h1>Create your neural network model</h1>
 Next, you create a 'feed-foward' neural network. Feed-forward neural networks are artificial neural networks where the connections between each nueron [unit] do not form a cycle.
-```
+```python
 #create feedforward model with 'Sequential' model
 model = tf.keras.models.Sequential()
 ```
+
 <h1>Add input and hidden layers</h1>
 ```python
 #'Flatten' multi-dimensional array units and use for input layer 
