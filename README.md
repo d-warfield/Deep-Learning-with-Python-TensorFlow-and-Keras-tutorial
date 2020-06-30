@@ -95,7 +95,7 @@ When we train our neural network, we caculate **loss**. Loss is the penalty for 
 
 To reduce our loss, and, in effect, make our model predict digits more accurately, we use an **optimizer** function. The purpose of optimizer function is to 'rewire' our neural network so that it learns to make better predictions on the data we our network in the future. Put more formally, we use an optimizer function to adjust the individual weights of each neuron to augment the neural network's ability to learn.
 
-```
+```python
 #define parameters to train model
 model.compile(optimizer='adam', #optimizer function
               loss='sparse_categorical_crossentropy', #loss function
