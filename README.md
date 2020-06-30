@@ -83,7 +83,7 @@ Our output layer has only 10 neurons--one for each number ranging from 0-9. We u
 We have 10 different classes for our numbers ranging from 0-9. Hence, the dimension of the output layer is 10. In a perfect world, if our model could predict a probability of 1.0 for a single output, and probability of zero for the other outputs, our model would work 100% of the time.
 
 ```python
-#Create output layer using 10 neurons to to classify numbers 0-9
+#Create output layer using 10 neurons to classify numbers 0-9
 #Use 'softmax' activation function because we want a probability distribution
 model.add(tf.keras.layers.Dense(10, activation=tf.nn.softmax))
 ```
@@ -114,6 +114,7 @@ We also define our number of epochs as ```epochs=3``` which means that we will d
 #train model
 model.fit(x_train, y_train, epochs=3)
 ```
+
 <h1>Test model on unseen data</h1>
 Next, we compute the validation loss and validation accuracy of our model. These particular metrics help us determine how well our model 'generalizes,' or, in simple terms, **performs** on **unseen** data. If our model performs well on unseen data, then we can be sure that our model will make extremely accurate predictions. 
 
@@ -125,15 +126,18 @@ print('Validation Loss:{}\nValidation Accuracy:{}'.format(val_loss, val_acc))
 
 <h1>Make a prediction</h1>
 We use our ```.predict([x_test])``` method instruct our model to make predictions for the testing data. 
+
 ``` python
 #make predictions
 predictions = model.predict([x_test])
 ```
 
 <h1>View our prediction</h1>
+
 ```python
 #view model predictions for an individual indice
 print(np.argmax(predictions[13]))
 
 #view test image to check prediction
 plt.imshow(x_test[13])
+```
