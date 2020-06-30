@@ -2,15 +2,14 @@
 A gentle introduction to deep learning with Python, TensorFlow, and Keras
 
 <h1>Overview</h1>
-This is a simple tutorial for individuals interested in learning more about Deep Learning. In this tutorial, we build a deep learning neural network that is capable of predicting handwritten digits. You will learn how to do the following:
+<p>This is a simple tutorial for individuals interested in learning more about Deep Learning. In this tutorial, we build a deep learning neural network that is capable of predicting handwritten digits. You will learn how to do the following:</p> 
+    
+* **Import** training and testing data
+* **Build** a neural network model
+* **Train** a neural network model
+* **Evaluate** the neural network's performance
 
-     
-* Import training and testing data
-* Build a neural network model
-* Train a neural network model
-* Evaluation the neural network's performance
-
-Use the code walkthrough below to begin the tutorial.
+<p>Use the code walkthrough below to begin the tutorial.</p>
 
 ## Import Dependencies 
 
