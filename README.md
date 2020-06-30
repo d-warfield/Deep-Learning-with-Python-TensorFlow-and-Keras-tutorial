@@ -31,32 +31,39 @@ mnist = tf.keras.datasets.mnist
 
 <h1>Split your dataset into training and testing</h1>
 Split your dataset into **training** and **testing** sets.
+
 ```python
 #split data into test and train
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 ```
+
 Splitting your data enables you to evaluate your model's 'generalization' capabilities when testing it on *unseen* training data. In this particular case, our unseen training data would be handwritten digits that our model has not seen yet seen, denoted as ```x_test``` in the code.
 
 Furthermore, after a model has been processed by using the training set, you test the model by making predictions *against* the test set. Because the data in the testing set already contains known values for the attribute that you want to predict, it is easy to determine whether the model's guesses are correct.
 
 <h1>Normalize your data</h1>
-Next, you **normalize** the data. 
+Next, you **normalize** the data.
+
 ```python
 #normalize data
 x_train = tf.keras.utils.normalize(x_train, axis = 1)
 x_test = tf.keras.utils.normalize(x_test, axis = 1)
 ```
-**Why do we normalize the data**
+
+**Why do we normalize data**
 The goal of normalization is to change the values in your dataset so they have a **common scale**. By inducing a common scale, your training data less sensitive to the scale of individual features. In other words, normalization eliminates the units of measurement from your data, enabling you to more easily compare data from that different places.
 
 <h1>Create your neural network model</h1>
 Next, you create a 'feed-foward' neural network. Feed-forward neural networks are artificial neural networks where the connections between each nueron [unit] do not form a cycle.
+
 ```python
 #create feedforward model with 'Sequential' model
 model = tf.keras.models.Sequential()
 ```
 
 <h1>Add input and hidden layers</h1>
+To create the first layer of our neural network, we convert our 28x28 multi-dimensional arrays into a vector using ```.Flatten```. This method takes each pixel value of our selected image, adds it to a vector, and then uses each number in the vector as an input value for our first layer.
+
 ```python
 #'Flatten' multi-dimensional array units and use for input layer 
 model.add(tf.keras.layers.Flatten())
