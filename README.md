@@ -2,30 +2,32 @@
 A gentle introduction to deep learning with Python, TensorFlow, and Keras
 
 <h1>Overview</h1>
-This is a simple tutorial for individuals interested in learning more about Deep Learning. In this tutorial, we build a deep learning model that can predict handwritten digits. You will learn how to do the following:
+This is a simple tutorial for individuals interested in learning more about Deep Learning. In this tutorial, we build a deep learning neural network that is capable of predicting handwritten digits. You will learn how to do the following:
 
-
+     
 * Import training and testing data
 * Build a neural network model
 * Train a neural network model
 * Evaluation the neural network's performance
 
+Use the code walkthrough below to begin the tutorial.
 
 <h1>Import Dependencies</h1>
 
-Import all of your **dependencies**
+Import all of your **dependencies**. Dependencies are the 'tools' you can use to make your code work its magic.
 
 ```python
-import tensorflow as tf
-import matplotlib.pyplot as plt
-import numpy as np
+import tensorflow as tf #used for creating, training, and testing neural networks
+import matplotlib.pyplot as plt #used for visualizing digit images
+import numpy as np #linear algebra
 ```
 
-<h1>Import Dataset</h1>
+<h1>Import your dataset</h1>
 
-Import handwritten images. The MNIST database is a large database of handwritten digits that is commonly used for training various image processing systems.
+Import each image of your handwritten digits. For this tutorial, we use the MNIST database: a large database of handwritten digits that is commonly used for training various image processing systems.
+
 ```python
-#28x28 pixel hand-written digit images in multi-dimensional array
+#import 28x28 pixel hand-written digit images in multi-dimensional arrays
 mnist = tf.keras.datasets.mnist 
 ```
 
