@@ -53,10 +53,10 @@ x_test = tf.keras.utils.normalize(x_test, axis = 1)
 ```
 
 **Why do we normalize data**
-The goal of normalization is to change the values in your dataset so they have a **common scale**. By inducing a common scale, your training data less sensitive to the scale of individual features. In other words, normalization eliminates the units of measurement from your data, enabling you to more easily compare data from that different places.
+The goal of normalization is to change the values in your dataset so they have a **common scale**. By inducing a common scale, your training data less sensitive to the scale of individual features. In other words, normalization eliminates the units of measurement from your data, enabling you to more easily compare data from different places.
 
 <h1>Create your neural network model</h1>
-Next, you create a 'feed-foward' neural network. Feed-forward neural networks are artificial neural networks where the connections between each nueron [unit] do not form a cycle.
+Next, you create a 'feed-forward' neural network. Feed-forward neural networks are artificial neural networks where the connections between each neuron [unit] do not form a cycle.
 
 ```python
 #create feedforward model with 'Sequential' model
@@ -80,9 +80,9 @@ model.add(tf.keras.layers.Dense(128, activation=tf.nn.relu))
 ```
 
 <h1>Add your final 'output' layer</h1>
-Our output layer has only 10 neurons--one for each number ranging from 0-9. We use a 'softmax' activiation function so that our model can determine separate probabilities for each of the ten digits. When we instruct our model to make a prediction on a digit that we know is--let's say 7--we would want our softmax activation function to return a number somewhere close to 1. If, however, our model distributes  
+Our output layer has only 10 neurons--one for each number ranging from 0-9. We use a 'softmax' activation function so that our model can determine separate probabilities for each of the ten digits. When we instruct our model to predict a digit that we know is--let's say 7--we would want our softmax activation function to return a number somewhere close to 1. If, however, our model distributes  
 
-We have 10 different classes for our numbers ranging from 0-9. Hence, the dimension of the output layer is 10. In a perfect world, if our model could predict a probability of 1.0 for a single output, and probability of zero for the other outputs, our model would work 100% of the time.
+We have 10 different classes for our numbers ranging from 0-9. Hence, the dimension of the output layer is 10. In a perfect world, if our model could predict a probability of 1.0 for a single output, and a probability of zero for the other outputs, our model would work 100% accurately all of the time.
 
 ```python
 #Create output layer using 10 neurons to classify numbers 0-9
@@ -91,9 +91,9 @@ model.add(tf.keras.layers.Dense(10, activation=tf.nn.softmax))
 ```
 
 <h1>Optimize and calculate loss</h1>
-When we train our neural network, we cacluate **loss**. Loss is the penalty for a bad prediction. 
+When we train our neural network, we caculate **loss**. Loss is the penalty for a bad prediction. 
 
-To reduce our loss and, in effect, make our model predict digits more accurately, we use an **optimizer** function. The purpose of optimizer function is to 'rewire' our neural network so that it learns to make better predictions on the data we our network in the future. 
+To reduce our loss, and, in effect, make our model predict digits more accurately, we use an **optimizer** function. The purpose of optimizer function is to 'rewire' our neural network so that it learns to make better predictions on the data we our network in the future. Put more formally, we use an optimizer function to adjust the individual weights of each neuron to augment the neural network's ability to learn.
 
 ```
 #define parameters to train model
